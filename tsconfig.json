@@ -1,3 +1,38 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es2017",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "noLib": false,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "sourceMap": true,
+    "rootDir": "./",
+    "jsx": "react",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"],
+      "@api": ["src/api/index"],
+      "@assets/*": ["src/assets/*"],
+      "@components": ["src/components/index"],
+      "@helpers": ["src/helpers/index"],
+      "@hooks": ["src/hooks/index"],
+      "@navigation/*": ["src/navigation/*"],
+      "@translation": ["src/translation/index"],
+      "@screens": ["src/screens/index"],
+      "@storage": ["src/storage/index"],
+      "@store/*": ["src/store/*"],
+      "@uiKit": ["src/uiKit/index"],
+      "@validation": ["src/validation/index"]
+    }
+  }
 }

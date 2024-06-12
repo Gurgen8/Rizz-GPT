@@ -1,7 +1,16 @@
-import {TouchableOpacity} from 'react-native';
 import DropShadow from 'react-native-drop-shadow';
-import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
+import {Colors} from '@uiKit';
+
+const ShadowStyles = {
+  shadowColor: 'white',
+  shadowOffset: {
+    width: 0,
+    height: 0,
+  },
+  shadowOpacity: 1,
+  shadowRadius: 8,
+};
 
 const Container = styled.View`
   flex: 1;
@@ -10,41 +19,12 @@ const Container = styled.View`
   background-color: #000;
 `;
 
-const GradientBackground = styled(LinearGradient).attrs({
-  colors: ['#ff007f', '#7700ff'],
-  start: {x: 0, y: 0},
-  end: {x: 1, y: 1},
-})`
-  flex: 1;
-  width: 100%;
-  align-items: center;
-`;
-
-const Header = styled.View`
-  width: 100%;
-  padding: 10px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const BackButton = styled.TouchableOpacity`
-  padding: 10px;
-`;
-
-const Title = styled.Text`
-  font-size: 24px;
-  color: white;
-  font-weight: bold;
-`;
-
-const PlusButton = styled.TouchableOpacity`
-  padding: 10px;
+const ScrollView = styled.ScrollView`
+  margin-top: -42px;
 `;
 
 const ScreenshotContainer = styled(DropShadow)`
-  width: 80%;
-  height: 60%;
+  height: 500px;
   background-color: white;
   border-radius: 10px;
   margin: 20px;
@@ -59,25 +39,28 @@ const Footer = styled.View`
   align-items: center;
 `;
 
-const CopyTextButton = styled(TouchableOpacity)`
+const CopyTextView = styled.View`
   padding: 15px 20px;
-  background-color: #f0f0f0;
+  background-color: ${Colors.LIGHT_GRAY};
   border-radius: 10px;
+  padding-right: 50px;
+  height: 160px;
+  margin-bottom: 16px;
 `;
 
-const CopyText = styled.Text`
-  color: #333;
+const CopyButton = styled.TouchableOpacity`
+  position: absolute;
+  right: 8px;
+  align-items: center;
+  top: 60px;
 `;
 
 export {
-  CopyText,
-  CopyTextButton,
+  CopyTextView,
   Footer,
   Container,
-  Header,
-  PlusButton,
   ScreenshotContainer,
-  Title,
-  BackButton,
-  GradientBackground,
+  ScrollView,
+  CopyButton,
+  ShadowStyles,
 };

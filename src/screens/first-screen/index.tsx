@@ -1,10 +1,16 @@
 import React from 'react';
-import {Container, AppText} from './styles';
+import {Container} from './styles';
+import {AppText, Colors, Fonts} from '@uiKit';
 
 export const FirstScreen = () => {
   return (
     <Container>
-      <AppText>RIZZGPT</AppText>
+      <AppText
+        fontFamily={Fonts.Syncopate}
+        variant="h1"
+        color={Colors.ROSE}
+        text="RIZZGPT"
+      />
     </Container>
   );
 };

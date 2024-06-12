@@ -1,19 +1,28 @@
 import React from 'react';
-import {Container, Description, ImageWrapper} from './styles';
+import {Container, Footer, Image, Image2, Image3, ImageWrapper} from './styles';
 import {Button, Header} from '../../components';
+import {ImagesAssets} from '@assets/images';
+import {AppText} from '@uiKit';
 
 export const ThirdScreen = () => {
   return (
     <Container>
       <Header />
-      <Description>{`Upload a screenshot \nof a chat or bio`}</Description>
+      <AppText
+        marginTop={16}
+        marginBottom={50}
+        textAlign="center"
+        variant="h4"
+        text={'Upload a screenshot \nof a chat or bio'}
+      />
       <ImageWrapper>
-        {/* <Image
-          source={require('./path/to/your/image.png')}
-          style={{width: 300, height: 300, resizeMode: 'contain'}}
-        /> */}
+        <Image source={ImagesAssets.Screen2} />
+        <Image2 source={ImagesAssets.Screen1} />
+        <Image3 source={ImagesAssets.Screen3} />
       </ImageWrapper>
-      <Button />
+      <Footer>
+        <Button text="Upload Screenshot" />
+      </Footer>
     </Container>
   );
 };

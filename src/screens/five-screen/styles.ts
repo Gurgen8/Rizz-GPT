@@ -1,10 +1,16 @@
 import styled from 'styled-components/native';
+import {Colors} from '@uiKit';
 
 const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #000;
+  background-color: ${Colors.BACKGROUND};
+`;
+
+const Wrapper = styled.View`
+  margin-top: -42px;
+  flex: 1;
 `;
 
 const Footer = styled.View`
@@ -12,6 +18,7 @@ const Footer = styled.View`
   padding: 20px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 32px;
 `;
 
-export {Container, Footer};
+export {Container, Wrapper, Footer};

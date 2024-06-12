@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import LinearGradient from 'react-native-linear-gradient';
+import {Colors} from '@uiKit';
 
 const Container = styled.View`
   flex: 1;
@@ -7,53 +7,39 @@ const Container = styled.View`
   align-items: center;
 `;
 
-const Header = styled(LinearGradient).attrs({
-  colors: ['rgba(255, 0, 122, 1)', 'rgba(255, 0, 109, 0.1)'],
-  start: {x: 0, y: 0},
-  end: {x: 0, y: 1},
-})`
+const Footer = styled.View`
   width: 100%;
-  padding: 60px 20px 20px 20px;
-  align-items: center;
-  height: 160px;
-`;
-
-const HeaderText = styled.Text`
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-`;
-
-const Description = styled.Text`
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-  margin: 20px 0;
+  padding: 0 20px;
 `;
 
 const ImageWrapper = styled.View`
-  margin: 20px 0;
-`;
-
-const Button = styled.TouchableOpacity`
-  background-color: #0ead69;
-  padding: 15px 30px;
-  border-radius: 30px;
+  height: 250px;
   align-items: center;
-  margin-top: 20px;
+  margin-bottom: 50px;
 `;
 
-const ButtonText = styled.Text`
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
+const Image = styled.Image`
+  width: 110px;
+  height: 200px;
+  border-width: 0.75px;
+  border-color: ${Colors.WHITE};
+  border-radius: 10px;
+  position: absolute;
+  z-index: 2;
 `;
-export {
-  HeaderText,
-  ButtonText,
-  Button,
-  ImageWrapper,
-  Description,
-  Container,
-  Header,
-};
+
+const Image2 = styled(Image)`
+  transform: rotate(15deg);
+  z-index: 3;
+  left: 10px;
+  top: 10px;
+`;
+
+const Image3 = styled(Image)`
+  transform: rotate(-15deg);
+  z-index: 1;
+  right: 10px;
+  top: 10px;
+`;
+
+export {ImageWrapper, Footer, Container, Image2, Image3, Image};

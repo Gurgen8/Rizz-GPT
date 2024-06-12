@@ -1,10 +1,12 @@
-import React from 'react';
-import {ButtonView, ButtonText} from './styles';
+import React, {FC, memo} from 'react';
+import {ButtonView} from './styles';
+import {LocalProps} from './types';
+import {AppText} from '@uiKit';
 
-export const Button = () => {
+export const Button: FC<LocalProps> = memo(({text, isLeftText}) => {
   return (
-    <ButtonView>
-      <ButtonText>Upload Screenshot</ButtonText>
+    <ButtonView isLeftText={isLeftText}>
+      <AppText variant="h5" text={text} />
     </ButtonView>
   );
-};
+});

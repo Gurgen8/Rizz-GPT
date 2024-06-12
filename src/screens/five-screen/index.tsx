@@ -1,23 +1,23 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 import {Button, Header, ScreenshotItem} from '../../components';
-import {Container, Footer} from './styles';
-
+import {Container, Footer, Wrapper} from './styles';
 const screenshots = new Array(9).fill("User's screenshot");
 
 export const FiveScreen = () => {
   return (
     <Container>
       <Header />
-      <FlatList
-        data={screenshots}
-        renderItem={ScreenshotItem}
-        keyExtractor={(item, index) => index.toString()}
-        numColumns={3}
-        contentContainerStyle={{alignItems: 'center'}}
-      />
+      <Wrapper>
+        <FlatList
+          data={screenshots}
+          renderItem={ScreenshotItem}
+          keyExtractor={(_item, index) => index.toString()}
+          numColumns={3}
+        />
+      </Wrapper>
       <Footer>
-        <Button />
+        <Button text="Upload Screenshot" />
       </Footer>
     </Container>
   );

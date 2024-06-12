@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text} from 'react-native';
-import {DeleteButton, ScreenshotContainer, ScreenshotText} from './styles';
+import {DeleteButton, ScreenshotContainer, ShadowStyles} from './styles';
+import {LocalProps} from './types';
+import {AppText} from '@uiKit';
 
-export const ScreenshotItem = ({item}) => (
-  <ScreenshotContainer>
-    <ScreenshotText>{item}</ScreenshotText>
+export const ScreenshotItem = ({item}: LocalProps) => (
+  <ScreenshotContainer style={ShadowStyles}>
+    <AppText variant="p2" textAlign="center" text={item} />
     <DeleteButton>
-      <Text style={{color: '#000'}}>X</Text>
+      <AppText variant="p3" text="X" />
     </DeleteButton>
   </ScreenshotContainer>
 );

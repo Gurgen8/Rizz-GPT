@@ -1,16 +1,9 @@
 import styled from 'styled-components/native';
+import {Colors} from '@uiKit';
 
-const Container = styled.View`
+export const Container = styled.View`
   flex: 1;
-  background-color: #000;
+  background-color: ${Colors.BACKGROUND};
   justify-content: center;
   align-items: center;
 `;
-
-const AppText = styled.Text`
-  color: #ff007a;
-  font-size: 24px;
-  font-weight: bold;
-`;
-
-export {Container, AppText};

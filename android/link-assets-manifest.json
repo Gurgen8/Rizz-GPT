@@ -46,15 +46,19 @@
       "sha1": "2db3b9c435e7e7f52203e3d636d3ddb90e4e0878"
     },
     {
-      "path": "src/assets/images/screen 1.png",
+      "path": "src/assets/images/index.ts",
+      "sha1": "5be4306a00c45660ebdfaeaa66933fdbf9edb70f"
+    },
+    {
+      "path": "src/assets/images/screen1.png",
       "sha1": "83815e5913f5533390c4dc6053102588471f46f6"
     },
     {
-      "path": "src/assets/images/screen 2.png",
+      "path": "src/assets/images/screen2.png",
       "sha1": "be35c3cc279db890f7fcdaf261295500a94b28e5"
     },
     {
-      "path": "src/assets/images/screen 3.png",
+      "path": "src/assets/images/screen3.png",
       "sha1": "cb607b4a1cc3e64706b7460705661ed96cbec46f"
     },
     {
@@ -63,7 +67,7 @@
     },
     {
       "path": "src/assets/svgs/goback.svg",
-      "sha1": "8f1e1b3c07c8e7f1c193143d08b8b66eb6f75176"
+      "sha1": "3d9e917d7fdb369248bc03d7a0b9b43f106da82d"
     },
     {
       "path": "src/assets/svgs/match.svg",
@@ -71,7 +75,7 @@
     },
     {
       "path": "src/assets/svgs/plus.svg",
-      "sha1": "d5dca73bc12bf15833254e284c866fd3c6ee8549"
+      "sha1": "b62459a8e416947d7f4ddcdf4ce5d4dc9a984975"
     }
   ]
 }
