@@ -1,13 +1,22 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {HeaderRow, HeaderView} from './styles';
 import {AppText, Colors} from '@uiKit';
 import {PlusIcon, GoBackIcon} from '@assets/svgs';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {StackRoutNavigationParams} from '@navigation/types';
+import {TouchableOpacity} from 'react-native';
 
-export const Header = memo(() => {
+export const Header = () => {
+  const navigation = useNavigation<NavigationProp<StackRoutNavigationParams>>();
+
+  const onGoBack = () => navigation.goBack();
+
   return (
-    <HeaderView>
+    <HeaderView colors={['', '']}>
       <HeaderRow>
-        <GoBackIcon width={25} height={25} fill={Colors.WHITE} />
+        <TouchableOpacity onPress={onGoBack}>
+          <GoBackIcon width={25} height={25} fill={Colors.WHITE} />
+        </TouchableOpacity>
         <AppText variant="h1" text="RIZZGPT" />
         <PlusIcon
           width={30}
@@ -18,4 +27,4 @@ export const Header = memo(() => {
       </HeaderRow>
     </HeaderView>
   );
-});
+};

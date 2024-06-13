@@ -1,11 +1,4 @@
 import styled from 'styled-components/native';
-import {Colors} from '@uiKit';
-
-const Container = styled.SafeAreaView`
-  flex: 1;
-  background-color: ${Colors.BACKGROUND};
-  align-items: center;
-`;
 
 const HeaderView = styled.View`
   margin-top: -50px;
@@ -17,4 +10,11 @@ const FeaturesList = styled.View`
   align-items: center;
 `;
 
-export {FeaturesList, HeaderView, Container};
+const Pressable = styled.TouchableOpacity`
+  z-index: 9;
+`;
+const ListContent = {
+  padding: 20,
+};
+
+export {FeaturesList, Pressable, ListContent, HeaderView};

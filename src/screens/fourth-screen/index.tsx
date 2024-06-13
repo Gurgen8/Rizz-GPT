@@ -1,18 +1,25 @@
 import React from 'react';
 import {
-  Container,
   ScreenshotContainer,
   Footer,
   ScrollView,
   CopyTextView,
   CopyButton,
-  ShadowStyles,
 } from './styles';
 import {Button, Header} from '@components';
-import {AppText, Colors} from '@uiKit';
+import {AppText, Colors, Container, ShadowStyles} from '@uiKit';
+import {
+  StackNavigationRoutes,
+  StackNavigationScreenProps,
+} from '@navigation/types';
 import {CopyIcon} from '@assets/svgs';
 
-export const ForthScreen = () => {
+export const FourthScreen = ({
+  navigation,
+}: StackNavigationScreenProps<StackNavigationRoutes.FourthScreen>) => {
+  const onNextScreen = () =>
+    navigation.navigate(StackNavigationRoutes.FifthScreen);
+
   return (
     <Container>
       <Header />
@@ -44,7 +51,7 @@ export const ForthScreen = () => {
             est ut dui faucibus dapibus nec vel erat."
             />
           </CopyTextView>
-          <Button isLeftText text="Generate more" />
+          <Button onPress={onNextScreen} isLeftText text="Generate more" />
         </Footer>
       </ScrollView>
     </Container>

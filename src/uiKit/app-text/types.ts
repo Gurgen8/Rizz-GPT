@@ -17,13 +17,6 @@ interface TypographyProps extends Omit<TextProps, 'fontWeight'> {
   marginRight?: TextStyle['marginRight'];
   fontFamily?: TextStyle['fontFamily'];
   text: string;
-  isExpanded?: boolean;
-  markedText?: string;
-  decorationText?: string;
-  onShowText?: () => void;
-  secretText?: string;
-  isLargeText?: boolean;
-  dot?: boolean;
 }
 
 export type {TypographyProps, Variant};

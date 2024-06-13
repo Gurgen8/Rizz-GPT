@@ -1,7 +1,7 @@
 import React from 'react';
-import {DeleteButton, ScreenshotContainer, ShadowStyles} from './styles';
+import {DeleteButton, ScreenshotContainer} from './styles';
 import {LocalProps} from './types';
-import {AppText} from '@uiKit';
+import {AppText, ShadowStyles} from '@uiKit';
 
 export const ScreenshotItem = ({item}: LocalProps) => (
   <ScreenshotContainer style={ShadowStyles}>

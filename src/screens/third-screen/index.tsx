@@ -1,10 +1,19 @@
 import React from 'react';
-import {Container, Footer, Image, Image2, Image3, ImageWrapper} from './styles';
+import {ButtonView, Image, Image2, Image3, ImageWrapper} from './styles';
 import {Button, Header} from '../../components';
 import {ImagesAssets} from '@assets/images';
-import {AppText} from '@uiKit';
+import {AppText, Container} from '@uiKit';
+import {
+  StackNavigationRoutes,
+  StackNavigationScreenProps,
+} from '@navigation/types';
 
-export const ThirdScreen = () => {
+export const ThirdScreen = ({
+  navigation,
+}: StackNavigationScreenProps<StackNavigationRoutes.ThirdScreen>) => {
+  const onNextScreen = () =>
+    navigation.navigate(StackNavigationRoutes.FourthScreen);
+
   return (
     <Container>
       <Header />
@@ -20,9 +29,9 @@ export const ThirdScreen = () => {
         <Image2 source={ImagesAssets.Screen1} />
         <Image3 source={ImagesAssets.Screen3} />
       </ImageWrapper>
-      <Footer>
-        <Button text="Upload Screenshot" />
-      </Footer>
+      <ButtonView>
+        <Button onPress={onNextScreen} text="Upload Screenshot" />
+      </ButtonView>
     </Container>
   );
 };

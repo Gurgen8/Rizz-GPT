@@ -1,13 +1,7 @@
 import styled from 'styled-components/native';
 import {Colors} from '@uiKit';
 
-const Container = styled.View`
-  flex: 1;
-  background-color: #000;
-  align-items: center;
-`;
-
-const Footer = styled.View`
+const ButtonView = styled.View`
   width: 100%;
   padding: 0 20px;
 `;
@@ -42,4 +36,4 @@ const Image3 = styled(Image)`
   top: 10px;
 `;
 
-export {ImageWrapper, Footer, Container, Image2, Image3, Image};
+export {ImageWrapper, ButtonView, Image2, Image3, Image};

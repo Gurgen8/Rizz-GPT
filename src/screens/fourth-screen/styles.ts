@@ -2,30 +2,13 @@ import DropShadow from 'react-native-drop-shadow';
 import styled from 'styled-components/native';
 import {Colors} from '@uiKit';
 
-const ShadowStyles = {
-  shadowColor: 'white',
-  shadowOffset: {
-    width: 0,
-    height: 0,
-  },
-  shadowOpacity: 1,
-  shadowRadius: 8,
-};
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background-color: #000;
-`;
-
 const ScrollView = styled.ScrollView`
   margin-top: -42px;
 `;
 
 const ScreenshotContainer = styled(DropShadow)`
   height: 500px;
-  background-color: white;
+  background-color: ${Colors.WHITE};
   border-radius: 10px;
   margin: 20px;
   justify-content: center;
@@ -55,12 +38,4 @@ const CopyButton = styled.TouchableOpacity`
   top: 60px;
 `;
 
-export {
-  CopyTextView,
-  Footer,
-  Container,
-  ScreenshotContainer,
-  ScrollView,
-  CopyButton,
-  ShadowStyles,
-};
+export {CopyTextView, Footer, ScreenshotContainer, ScrollView, CopyButton};

@@ -1,18 +1,19 @@
-import React from 'react';
+import React, {FC, memo} from 'react';
 import {View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {AppText, Colors} from '@uiKit';
+import {AppText, Colors, Flexible} from '@uiKit';
 import {Button} from '@components';
 import MaskedView from '@react-native-masked-view/masked-view';
 import {BannerContainer, Container, styles} from './styles';
+import {LocalProps} from './types';
 
-export const Banner = () => {
+export const Banner: FC<LocalProps> = memo(({onPress}) => {
   return (
     <Container>
       <LinearGradient
         start={{x: 0, y: 0}}
         end={{x: 1, y: 0}}
-        colors={['#4caf50', '#46B1C9']}
+        colors={Colors.BANNER_BUTTON_GRADIENT}
         style={styles.miniButton}>
         <AppText variant="p1" text="Rizz God" />
       </LinearGradient>
@@ -29,13 +30,13 @@ export const Banner = () => {
             </View>
           }>
           <LinearGradient
-            colors={['#fff', '#46B1C9']}
+            colors={Colors.BANNER_TEXT_GRADIENT}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 1}}
-            style={{flex: 1}}
+            style={Flexible}
           />
         </MaskedView>
-        <Button text="Unlock Free Trial" />
+        <Button onPress={onPress} text="Unlock Free Trial" />
         <AppText
           marginBottom={12}
           marginTop={21}
@@ -46,4 +47,4 @@ export const Banner = () => {
       </BannerContainer>
     </Container>
   );
-};
+});

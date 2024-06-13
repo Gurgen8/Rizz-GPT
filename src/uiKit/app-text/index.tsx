@@ -21,7 +21,6 @@ export const AppText: FC<TypographyProps> = ({
       style={[
         {
           color: color || Colors.WHITE,
-          textDecorationColor: Colors.WHITE,
         },
         variant && textStyles[variant],
         textAlign && {textAlign},

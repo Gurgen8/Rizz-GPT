@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
+import {Colors} from '@uiKit';
 
 const HeaderView = styled(LinearGradient).attrs({
-  colors: ['rgba(255, 0, 122, 1)', 'rgba(255, 0, 109, 0.1)'],
+  colors: Colors.HEADER_GRADIENT,
   start: {x: 0, y: 0},
   end: {x: 0, y: 1},
 })`

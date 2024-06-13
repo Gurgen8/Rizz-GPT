@@ -1,8 +1,8 @@
 import React from 'react';
-import {FiveScreen} from './screens/five-screen';
+import {Navigation} from '@navigation/index';
 
-function App() {
-  return <FiveScreen />;
-}
+const App = () => {
+  return <Navigation />;
+};
 
 export default App;

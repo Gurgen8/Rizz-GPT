@@ -1,11 +1,17 @@
 import React from 'react';
-import {Container, FeaturesList, HeaderView} from './styles';
+import {FeaturesList, HeaderView, ListContent, Pressable} from './styles';
 import {GoBackIcon, MatchIcon} from '@assets/svgs';
 import {Banner} from '@components';
-import {AppText, Colors} from '@uiKit';
-import {FlatList, TouchableOpacity} from 'react-native';
+import {AppText, Colors, SafeAreaView} from '@uiKit';
+import {FlatList} from 'react-native';
+import {
+  StackNavigationRoutes,
+  StackNavigationScreenProps,
+} from '@navigation/types';
 
-export const SecondScreen = () => {
+export const SecondScreen = ({
+  navigation,
+}: StackNavigationScreenProps<StackNavigationRoutes.SecondScreen>) => {
   const FeaturesData = [
     {
       title: 'Unlimited Rizz',
@@ -29,29 +35,34 @@ export const SecondScreen = () => {
     },
   ];
 
+  const onNextScreen = () =>
+    navigation.navigate(StackNavigationRoutes.ThirdScreen);
+
+  const onGoBack = () => navigation.goBack();
+
   const renderItem = ({item}) => {
     return <AppText variant="p1" width={180} text={item.title} />;
   };
   return (
-    <Container>
+    <SafeAreaView>
       <FlatList
         data={[{}]}
-        contentContainerStyle={{padding: 20}}
+        contentContainerStyle={ListContent}
         renderItem={() => (
           <>
-            <TouchableOpacity>
+            <Pressable onPress={onGoBack}>
               <GoBackIcon width={25} height={25} fill={Colors.ROSE} />
-            </TouchableOpacity>
+            </Pressable>
             <HeaderView>
               <MatchIcon width={320} height={290} />
             </HeaderView>
             <FeaturesList>
               <FlatList renderItem={renderItem} data={FeaturesData} />
             </FeaturesList>
-            <Banner />
+            <Banner onPress={onNextScreen} />
           </>
         )}
       />
-    </Container>
+    </SafeAreaView>
   );
 };
