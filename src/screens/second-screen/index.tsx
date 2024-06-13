@@ -8,6 +8,7 @@ import {
   StackNavigationRoutes,
   StackNavigationScreenProps,
 } from '@navigation/types';
+import {FeatureTypes} from './types';
 
 export const SecondScreen = ({
   navigation,
@@ -40,7 +41,7 @@ export const SecondScreen = ({
 
   const onGoBack = () => navigation.goBack();
 
-  const renderItem = ({item}) => {
+  const renderItem = ({item}: FeatureTypes) => {
     return <AppText variant="p1" width={180} text={item.title} />;
   };
   return (
@@ -48,6 +49,7 @@ export const SecondScreen = ({
       <FlatList
         data={[{}]}
         contentContainerStyle={ListContent}
+        keyExtractor={(_item, index) => index.toString()}
         renderItem={() => (
           <>
             <Pressable onPress={onGoBack}>
@@ -57,7 +59,11 @@ export const SecondScreen = ({
               <MatchIcon width={320} height={290} />
             </HeaderView>
             <FeaturesList>
-              <FlatList renderItem={renderItem} data={FeaturesData} />
+              <FlatList
+                data={FeaturesData}
+                renderItem={renderItem}
+                keyExtractor={(_item, index) => index.toString()}
+              />
             </FeaturesList>
             <Banner onPress={onNextScreen} />
           </>
